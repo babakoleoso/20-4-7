@@ -1,809 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SGI Lesson 07 | 7-Day Iyawo Module</title>
-  <meta name="description" content="SwamiG Institute 7-Day Iyawo Module for Lesson 07: Sources of Ire / Ibi using the 20-4 Merindilogun process." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SGI — Cast 20-4 Process</title>
+
   <style>
     :root{
-      --bg:#09070f;
-      --bg2:#130f1f;
-      --panel:#161222;
-      --panel2:#1b1630;
+      --bg:#0b0b0f;
+      --card:#171923;
+      --ink:#f3f4f8;
+      --muted:#b9bed1;
+      --line:rgba(255,255,255,.12);
       --gold:#d4af37;
-      --gold2:#f0d77a;
-      --purple:#7b2cbf;
-      --purple2:#a855f7;
-      --text:#f5efe0;
-      --muted:#d5cdb7;
-      --line:rgba(240,215,122,.24);
-      --glow:0 0 22px rgba(168,85,247,.18);
-      --shadow:0 18px 45px rgba(0,0,0,.45);
+      --gold2:#f0d67a;
+      --shadow:0 20px 50px rgba(0,0,0,.45);
+      --max:1100px;
     }
 
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+
     body{
       margin:0;
-      font-family:Georgia, "Times New Roman", serif;
-      color:var(--text);
       background:
-        radial-gradient(circle at top left, rgba(123,44,191,.20), transparent 28%),
-        radial-gradient(circle at top right, rgba(212,175,55,.13), transparent 24%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
-      line-height:1.6;
+        radial-gradient(circle at top, rgba(111,66,193,.22), transparent 34%),
+        radial-gradient(circle at 85% 15%, rgba(212,175,55,.12), transparent 22%),
+        linear-gradient(180deg, #09090c 0%, #0d0f14 100%);
+      color:var(--ink);
+      font-family:Inter, system-ui, Arial, sans-serif;
     }
 
-    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
 
     .topbar{
       position:sticky;
       top:0;
-      z-index:100;
-      backdrop-filter:blur(10px);
-      background:rgba(10,8,17,.84);
-      border-bottom:1px solid rgba(240,215,122,.15);
+      z-index:10;
+      background:rgba(10,11,15,.78);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
     }
 
     .topbar-inner{
-      max-width:1220px;
-      margin:0 auto;
+      max-width:var(--max);
+      margin:auto;
       padding:12px 18px;
       display:flex;
+      justify-content:space-between;
       align-items:center;
       gap:14px;
-      justify-content:space-between;
-      flex-wrap:wrap;
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:12px;
-      min-width:220px;
+      text-decoration:none;
+      color:var(--ink);
     }
 
-    .logo{
-      width:52px;
-      height:52px;
+    .brand img{
+      width:48px;
+      height:48px;
       object-fit:contain;
-      border-radius:10px;
-      background:#000;
-      box-shadow:0 0 16px rgba(168,85,247,.22);
-    }
-
-    .brand-text{
-      display:flex;
-      flex-direction:column;
-      line-height:1.15;
-    }
-
-    .brand-text strong{
-      color:var(--gold2);
-      font-size:1rem;
-      letter-spacing:.03em;
-    }
-
-    .brand-text span{
-      font-size:.83rem;
-      color:var(--muted);
-    }
-
-    .nav-cards{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:center;
-    }
-
-    .nav-card{
-      padding:9px 14px;
-      border:1px solid rgba(240,215,122,.22);
-      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border-radius:999px;
-      font-size:.88rem;
-      color:var(--text);
-      box-shadow:var(--glow);
-      transition:.25s ease;
-      white-space:nowrap;
-    }
-
-    .nav-card:hover{
-      transform:translateY(-2px);
-      border-color:rgba(240,215,122,.48);
-      color:var(--gold2);
-      box-shadow:0 0 24px rgba(212,175,55,.18);
-    }
-
-    .hero{
-      max-width:1220px;
-      margin:0 auto;
-      padding:72px 20px 28px;
-    }
-
-    .hero-panel{
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)),
-        linear-gradient(135deg, rgba(123,44,191,.18), rgba(212,175,55,.07));
-      border:1px solid rgba(240,215,122,.18);
-      border-radius:28px;
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.25fr .85fr;
-      gap:0;
-    }
-
-    .hero-copy{
-      padding:44px 38px 40px;
+      border-radius:12px;
+      background:rgba(255,255,255,.04);
+      padding:4px;
     }
 
     .eyebrow{
-      display:inline-block;
-      margin-bottom:14px;
-      font-size:.82rem;
-      letter-spacing:.16em;
       color:var(--gold2);
+      font-size:.78rem;
+      letter-spacing:.14em;
       text-transform:uppercase;
-      border:1px solid rgba(240,215,122,.24);
-      border-radius:999px;
-      padding:7px 12px;
-      background:rgba(0,0,0,.18);
+      font-weight:700;
     }
 
-    h1{
-      margin:0 0 14px;
-      font-size:clamp(2.2rem, 5vw, 4rem);
-      line-height:1.02;
-      color:#fff7dd;
-    }
-
-    .hero-copy p{
-      margin:0 0 14px;
-      color:var(--muted);
-      max-width:760px;
-      font-size:1.05rem;
-    }
-
-    .hero-highlights{
-      display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:12px;
-      margin-top:24px;
-    }
-
-    .highlight{
-      background:rgba(0,0,0,.18);
-      border:1px solid rgba(240,215,122,.14);
-      border-radius:18px;
-      padding:14px 12px;
-      text-align:center;
-    }
-
-    .highlight strong{
-      display:block;
-      font-size:1.5rem;
-      color:var(--gold2);
-      line-height:1.1;
-    }
-
-    .highlight span{
-      color:var(--muted);
-      font-size:.9rem;
-    }
-
-    .hero-side{
-      border-left:1px solid rgba(240,215,122,.12);
-      background:
-        radial-gradient(circle at center, rgba(212,175,55,.10), transparent 42%),
-        linear-gradient(180deg, rgba(16,12,26,.88), rgba(8,6,13,.92));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:28px;
-    }
-
-    .shell-orbit{
-      width:100%;
-      max-width:360px;
-      aspect-ratio:1/1;
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-
-    .core{
-      width:58%;
-      aspect-ratio:1/1;
-      border-radius:50%;
-      border:2px solid rgba(240,215,122,.28);
-      background:
-        radial-gradient(circle at 35% 30%, rgba(255,255,255,.12), transparent 25%),
-        radial-gradient(circle at center, rgba(123,44,191,.28), rgba(16,10,24,.95));
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:22px;
-      box-shadow:0 0 30px rgba(168,85,247,.25);
-      font-weight:bold;
-      font-size:1.2rem;
-      color:var(--gold2);
-    }
-
-    .shell{
-      position:absolute;
-      width:84px;
-      height:54px;
-      border-radius:60% 60% 52% 52% / 68% 68% 35% 35%;
-      background:
-        linear-gradient(180deg, #fff6dc 0%, #e7d9ba 55%, #cbb387 100%);
-      border:2px solid rgba(90,58,14,.42);
-      box-shadow:0 10px 20px rgba(0,0,0,.35);
-    }
-
-    .shell:after{
-      content:"";
-      position:absolute;
-      left:50%;
-      top:14%;
-      transform:translateX(-50%);
-      width:14px;
-      height:72%;
-      border-radius:999px;
-      background:
-        repeating-linear-gradient(
-          180deg,
-          #3a2c19 0 3px,
-          #e9dbc0 3px 5px
-        );
-      box-shadow:inset 0 0 2px rgba(0,0,0,.45);
-    }
-
-    .s1{top:0; left:50%; transform:translateX(-50%) rotate(-6deg);}
-    .s2{top:18%; right:4%; transform:rotate(38deg);}
-    .s3{bottom:18%; right:4%; transform:rotate(126deg);}
-    .s4{bottom:0; left:50%; transform:translateX(-50%) rotate(180deg);}
-    .s5{bottom:18%; left:4%; transform:rotate(232deg);}
-    .s6{top:18%; left:4%; transform:rotate(318deg);}
-
-    .wrap{
-      max-width:1220px;
-      margin:0 auto;
-      padding:22px 20px 72px;
-    }
-
-    .section-title{
-      margin:28px 0 14px;
-      font-size:2rem;
-      color:#fff4cf;
-      text-align:center;
-    }
-
-    .section-sub{
-      margin:0 auto 26px;
-      max-width:860px;
-      text-align:center;
-      color:var(--muted);
+    .brand-title{
+      font-weight:800;
       font-size:1rem;
     }
 
-    .process-panel,
-    .day-card,
-    .closing-panel{
-      background:linear-gradient(180deg, rgba(255,255,255,.025), rgba(255,255,255,.01));
-      border:1px solid rgba(240,215,122,.14);
-      border-radius:24px;
-      box-shadow:var(--shadow);
-    }
-
-    .process-panel{
-      padding:26px;
-      margin-bottom:30px;
-    }
-
-    .process-grid{
-      display:grid;
-      grid-template-columns:repeat(6, minmax(0,1fr));
-      gap:14px;
-    }
-
-    .step{
-      min-height:180px;
-      padding:18px 14px;
-      border-radius:18px;
-      border:1px solid rgba(240,215,122,.12);
-      background:linear-gradient(180deg, rgba(123,44,191,.10), rgba(0,0,0,.10));
-      position:relative;
-      overflow:hidden;
-    }
-
-    .step-num{
-      width:42px;
-      height:42px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-bottom:12px;
-      background:linear-gradient(180deg, var(--gold2), var(--gold));
-      color:#201400;
-      font-weight:bold;
-      font-size:1.05rem;
-      box-shadow:0 0 16px rgba(212,175,55,.22);
-    }
-
-    .step h3{
-      margin:0 0 8px;
-      font-size:1.02rem;
-      color:#fff0bf;
-    }
-
-    .step p{
-      margin:0;
-      color:var(--muted);
-      font-size:.94rem;
-    }
-
-    .days-grid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-      gap:18px;
-    }
-
-    .day-card{
-      padding:24px;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .day-card:before{
-      content:"";
-      position:absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:4px;
-      background:linear-gradient(90deg, var(--purple2), var(--gold2));
-    }
-
-    .day-head{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      gap:14px;
-      margin-bottom:16px;
-    }
-
-    .day-badge{
-      min-width:68px;
-      height:68px;
-      border-radius:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:1.45rem;
-      font-weight:bold;
-      color:#1f1400;
-      background:linear-gradient(180deg, var(--gold2), var(--gold));
-      box-shadow:0 0 20px rgba(212,175,55,.24);
-    }
-
-    .day-title{
-      flex:1;
-    }
-
-    .day-title h3{
-      margin:0 0 4px;
-      font-size:1.5rem;
-      color:#fff0bf;
-    }
-
-    .focus{
+    .pill{
+      padding:9px 14px;
+      border-radius:999px;
+      border:1px solid rgba(212,175,55,.28);
+      background:rgba(212,175,55,.08);
       color:var(--gold2);
-      font-style:italic;
-      font-size:.98rem;
+      font-size:.88rem;
+      font-weight:700;
+      text-decoration:none;
+      white-space:nowrap;
     }
 
-    .day-card p{
-      margin:0 0 14px;
+    .hero{
+      max-width:var(--max);
+      margin:auto;
+      padding:46px 18px 24px;
+    }
+
+    .hero-card{
+      border:1px solid var(--line);
+      border-radius:28px;
+      padding:28px 24px;
+      box-shadow:var(--shadow);
+      background:
+        linear-gradient(135deg, rgba(111,66,193,.18), rgba(212,175,55,.08)),
+        rgba(255,255,255,.025);
+    }
+
+    .badge{
+      display:inline-block;
+      margin-bottom:14px;
+      padding:7px 12px;
+      border-radius:999px;
+      color:var(--gold2);
+      border:1px solid rgba(240,214,122,.28);
+      background:rgba(212,175,55,.08);
+      font-size:.84rem;
+      font-weight:700;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:clamp(2rem,4.2vw,3.4rem);
+      line-height:1.08;
+    }
+
+    .lead{
+      margin:0;
+      max-width:800px;
       color:var(--muted);
+      font-size:1.03rem;
+      line-height:1.7;
     }
 
-    .mini-list{
-      display:grid;
-      gap:8px;
-      margin:14px 0 18px;
+    .wrap{
+      max-width:var(--max);
+      margin:auto;
+      padding:0 18px 64px;
     }
 
-    .mini-item{
-      padding:10px 12px;
-      border-radius:14px;
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(240,215,122,.10);
-      color:var(--text);
-      font-size:.95rem;
+    .diagram-card{
+      border:1px solid var(--line);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      background:rgba(255,255,255,.025);
     }
 
-    .outcome{
-      margin-top:10px;
-      border-left:3px solid var(--gold);
-      padding:8px 0 8px 14px;
-      color:#fff7dd;
-      font-weight:bold;
+    .diagram-head{
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+      background:rgba(255,255,255,.025);
     }
 
-    .closing-panel{
-      margin-top:28px;
-      padding:28px;
-    }
-
-    .closing-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px;
-    }
-
-    .closing-box{
-      padding:20px;
-      border-radius:20px;
-      background:rgba(0,0,0,.16);
-      border:1px solid rgba(240,215,122,.10);
-    }
-
-    .closing-box h3{
-      margin:0 0 12px;
-      color:#fff0bf;
+    .diagram-head h2{
+      margin:0;
       font-size:1.2rem;
     }
 
-    .closing-box ul{
-      margin:0;
-      padding-left:20px;
+    .diagram-head p{
+      margin:4px 0 0;
       color:var(--muted);
+      font-size:.95rem;
     }
 
-    .footer{
-      max-width:1220px;
-      margin:0 auto;
-      padding:0 20px 40px;
-      text-align:center;
-      color:#cbbf9e;
-      font-size:.92rem;
+    .diagram-body{
+      padding:18px;
     }
 
-    .footer a{
+    .diagram-frame{
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background:#0f1015;
+    }
+
+    .diagram-frame img{
+      width:100%;
+      height:auto;
+      object-fit:contain;
+    }
+
+    .notes{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .note{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+    }
+
+    .note h3{
+      margin:0 0 8px;
       color:var(--gold2);
+      font-size:1rem;
     }
 
-    @media (max-width: 1080px){
-      .hero-grid,
-      .closing-grid,
-      .days-grid{
-        grid-template-columns:1fr;
-      }
-      .hero-side{
-        border-left:none;
-        border-top:1px solid rgba(240,215,122,.12);
-      }
-      .process-grid{
-        grid-template-columns:repeat(3, minmax(0,1fr));
-      }
+    .note p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.55;
+      font-size:.94rem;
     }
 
-    @media (max-width: 700px){
-      .hero-copy{padding:30px 22px}
-      .hero-highlights{grid-template-columns:1fr}
-      .process-grid{grid-template-columns:1fr}
-      .nav-cards{justify-content:flex-start}
-      .topbar-inner{align-items:flex-start}
-      .day-head{flex-direction:column}
-      .day-badge{width:68px}
-      h1{font-size:2.2rem}
+    .process{
+      margin-top:18px;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+    }
+
+    .process h2{
+      margin:0 0 12px;
+      color:var(--gold2);
+      font-size:1.2rem;
+    }
+
+    .process ol{
+      margin:0;
+      padding-left:22px;
+      color:var(--muted);
+      line-height:1.75;
+    }
+
+    .process strong{color:var(--ink)}
+
+    footer{
+      max-width:var(--max);
+      margin:auto;
+      padding:0 18px 40px;
+      color:#99a0b7;
+      font-size:.9rem;
+    }
+
+    @media(max-width:860px){
+      .notes{grid-template-columns:1fr}
     }
   </style>
 </head>
+
 <body>
 
   <header class="topbar">
     <div class="topbar-inner">
-      <div class="brand">
-        <a href="https://swamiginstitute.com" target="_blank" rel="noopener">
-          <img src="SwamiG.gif" alt="SwamiG Institute Logo" class="logo">
-        </a>
-        <div class="brand-text">
-          <strong>SwamiG Institute</strong>
-          <span>Lesson 07 • Sources of Ire / Ibi • 20-4 for Iyawo</span>
+      <a class="brand" href="index.html">
+        <img src="SwamiG.gif" alt="SGI logo" />
+        <div>
+          <div class="eyebrow">SwamiG Institute</div>
+          <div class="brand-title">Cast 20-4 Process</div>
         </div>
-      </div>
+      </a>
 
-      <nav class="nav-cards">
-        <a class="nav-card" href="https://4cowrieshell.com/index0" target="_blank" rel="noopener">4-Cowrie</a>
-        <a class="nav-card" href="https://16cowrie.com" target="_blank" rel="noopener">16-Cowrie</a>
-        <a class="nav-card" href="https://myopele.com" target="_blank" rel="noopener">Opele</a>
-        <a class="nav-card" href="https://iamiyawo.com" target="_blank" rel="noopener">Iyawo Track</a>
-        <a class="nav-card" href="https://iamaborisha.com" target="_blank" rel="noopener">Obi Orisha</a>
-        <a class="nav-card" href="https://swamiginstitute.com" target="_blank" rel="noopener">SGI Home</a>
-      </nav>
+      <a class="pill" href="#diagram">View Diagram</a>
     </div>
   </header>
 
   <section class="hero">
-    <div class="hero-panel">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">7-Day Practice Module</div>
-          <h1>Sources of Ire / Ibi</h1>
-          <p>
-            This 7-day Iyawo module trains disciplined submission to the divination process through repeated casting,
-            elderization, interpretation, and documentation.
-          </p>
-          <p>
-            The practice flow follows the Lesson 07 assignment: first establish Odu in Ire or Ibi, cast again to determine
-            whether Ebo is needed, elderize the second cast, document the dominant Odu, and repeat the process daily.
-          </p>
-
-          <div class="hero-highlights">
-            <div class="highlight">
-              <strong>7</strong>
-              <span>Consecutive Days</span>
-            </div>
-            <div class="highlight">
-              <strong>6</strong>
-              <span>Cycles Per Day</span>
-            </div>
-            <div class="highlight">
-              <strong>42</strong>
-              <span>Total Practice Cycles</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-side">
-          <div class="shell-orbit">
-            <div class="shell s1"></div>
-            <div class="shell s2"></div>
-            <div class="shell s3"></div>
-            <div class="shell s4"></div>
-            <div class="shell s5"></div>
-            <div class="shell s6"></div>
-            <div class="core">20-4<br>Practice<br>Cycle</div>
-          </div>
-        </div>
-      </div>
+    <div class="hero-card">
+      <div class="badge">SGI Teaching Visual • 20-4 Lingo</div>
+      <h1>Cast 20-4 Process</h1>
+      <p class="lead">
+        This teaching page displays the 20-4 cowrie cast structure using the
+        hierarchy of <strong>Eldest</strong>, <strong>Elder</strong>,
+        <strong>Senior</strong>, and <strong>Junior</strong>. The cast is read
+        from the closest four elements to the furthest four elements.
+      </p>
     </div>
   </section>
 
   <main class="wrap">
-    <h2 class="section-title">Daily 20-4 Workflow</h2>
-    <p class="section-sub">
-      Each day contains six complete cycles. Every cycle follows the same movement from first cast to final documentation.
-    </p>
 
-    <section class="process-panel">
-      <div class="process-grid">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>First Cast</h3>
-          <p>Cast the elements once to establish the Odu in either Ire or Ibi.</p>
+    <section class="diagram-card" id="diagram">
+      <div class="diagram-head">
+        <div>
+          <h2>20-4 Cowrie Grouping Diagram</h2>
+          <p>Image file used below: <strong>EldestCowrie2.png</strong></p>
+        </div>
+        <div class="pill">Single Cast Method</div>
+      </div>
+
+      <div class="diagram-body">
+        <div class="diagram-frame">
+          <img
+            src="EldestCowrie2.png"
+            alt="20-4 cowrie cast showing Eldest, Elder, Senior, and Junior groupings with numbered shells."
+          />
         </div>
 
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>Second Cast</h3>
-          <p>Cast again to determine whether Ebo is needed in support of the revealed condition.</p>
-        </div>
+        <div class="notes">
+          <article class="note">
+            <h3>Eldest</h3>
+            <p>The closest four elements establish the primary Odu of the cast.</p>
+          </article>
 
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>Transform</h3>
-          <p>Transpose the result through the Basic Four Cowrie Shell Divination logic: Yes, No, or Definitely.</p>
-        </div>
+          <article class="note">
+            <h3>Elder / Senior / Junior</h3>
+            <p>The next levels determine whether the Eldest is respected or challenged.</p>
+          </article>
 
-        <div class="step">
-          <div class="step-num">4</div>
-          <h3>Elderize</h3>
-          <p>Use elderization to reveal the source field of Ire or Ibi through Eldest, Elder, Senior, and Junior.</p>
-        </div>
-
-        <div class="step">
-          <div class="step-num">5</div>
-          <h3>Document</h3>
-          <p>Record the dominant Odu, source, support, and whether Ebo is required or not required.</p>
-        </div>
-
-        <div class="step">
-          <div class="step-num">6</div>
-          <h3>Repeat Daily</h3>
-          <p>Complete six full cycles each day for seven consecutive days and submit the work daily.</p>
+          <article class="note">
+            <h3>Ibi to Ire</h3>
+            <p>When Eldership is respected, Ibi may be transformed into Ire.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <h2 class="section-title">7-Day Module Layout</h2>
-    <p class="section-sub">
-      The process remains constant each day, but the emphasis deepens from orientation to mastery.
-    </p>
-
-    <section class="days-grid">
-      <article class="day-card">
-        <div class="day-head">
-          <div class="day-badge">1</div>
-          <div class="day-title">
-            <h3>Day 1 — Orientation & Alignment</h3>
-            <div class="focus">Focus: Learning the flow</div>
-          </div>
-        </div>
-        <p>Move carefully through all six cycles. Concentrate on correct casting, identifying Ire versus Ibi, and building comfort with the full order of operations.</p>
-        <div class="mini-list">
-          <div class="mini-item">Perform 6 complete cycles</div>
-          <div class="mini-item">Identify Odu as Ire or Ibi</div>
-          <div class="mini-item">Begin daily documentation habit</div>
-        </div>
-        <div class="outcome">Outcome: Familiarity with the full process.</div>
-      </article>
-
-      <article class="day-card">
-        <div class="day-head">
-          <div class="day-badge">2</div>
-          <div class="day-title">
-            <h3>Day 2 — Accuracy in Casting</h3>
-            <div class="focus">Focus: Precision</div>
-          </div>
-        </div>
-        <p>Strengthen accuracy in shell counting and response classification. Confirm each reading carefully before proceeding to interpretation.</p>
-        <div class="mini-list">
-          <div class="mini-item">Perform 6 complete cycles</div>
-          <div class="mini-item">Track open-shell count carefully</div>
-          <div class="mini-item">Match response to Yes / No / Definitely</div>
-        </div>
-        <div class="outcome">Outcome: Greater consistency in casting.</div>
-      </article>
-
-      <article class="day-card">
-        <div class="day-head">
-          <div class="day-badge">3</div>
-          <div class="day-title">
-            <h3>Day 3 — Understanding Ebo</h3>
-            <div class="focus">Focus: Decision-making</div>
-          </div>
-        </div>
-        <p>Pay close attention to when the second cast requires Ebo and when it does not. Learn to distinguish maintenance from active spiritual response.</p>
-        <div class="mini-list">
-          <div class="mini-item">Perform 6 complete cycles</div>
-          <div class="mini-item">Record every Ebo / No Ebo outcome</div>
-          <div class="mini-item">Note strong “Definitely” patterns</div>
-        </div>
-        <div class="outcome">Outcome: Clearer understanding of spiritual support requirements.</div>
-      </article>
-
-      <article class="day-card">
-        <div class="day-head">
-          <div class="day-badge">4</div>
-          <div class="day-title">
-            <h3>Day 4 — Elderization Mastery</h3>
-            <div class="focus">Focus: Sources of Ire / Ibi</div>
-          </div>
-        </div>
-        <p>Work more deeply with the source structure of the cast: Eldest, Elder, Senior, and Junior. Identify the field through which the energy is expressing.</p>
-        <div class="mini-list">
-          <div class="mini-item">Eldest → Aiku / Iku</div>
-          <div class="mini-item">Elder → Aje / Ofo</div>
-          <div class="mini-item">Senior → Rin / Ija</div>
-          <div class="mini-item">Junior → Omo / Oran</div>
-        </div>
-        <div class="outcome">Outcome: Ability to identify where the condition is rooted.</div>
-      </article>
-
-      <article class="day-card">
-        <div class="day-head">
-          <div class="day-badge">5</div>
-          <div class="day-title">
-            <h3>Day 5 — Pattern Recognition</h3>
-            <div class="focus">Focus: Dominant trends</div>
-          </div>
-        </div>
-        <p>Look across the six daily cycles for repetition. Observe whether certain source fields, Odu, or support patterns recur more than others.</p>
-        <div class="mini-list">
-          <div class="mini-item">Compare all 6 cycles side by side</div>
-          <div class="mini-item">Highlight repeating Odu or source fields</div>
-          <div class="mini-item">Notice recurrent Ebo needs</div>
-        </div>
-        <div class="outcome">Outcome: Recognition of dominant energetic trends.</div>
-      </article>
-
-      <article class="day-card">
-        <div class="day-head">
-          <div class="day-badge">6</div>
-          <div class="day-title">
-            <h3>Day 6 — Integration</h3>
-            <div class="focus">Focus: Full interpretation</div>
-          </div>
-        </div>
-        <p>Bring the entire process together. Read Odu, determine support, identify source, and describe the relationship between the dominant and supporting patterns.</p>
-        <div class="mini-list">
-          <div class="mini-item">Interpret each cycle as a complete unit</div>
-          <div class="mini-item">Connect source with support Odu</div>
-          <div class="mini-item">Refine written summaries</div>
-        </div>
-        <div class="outcome">Outcome: More mature and holistic divination interpretation.</div>
-      </article>
-
-      <article class="day-card">
-        <div class="day-head">
-          <div class="day-badge">7</div>
-          <div class="day-title">
-            <h3>Day 7 — Discipline & Completion</h3>
-            <div class="focus">Focus: Mastery through repetition</div>
-          </div>
-        </div>
-        <p>Complete the final six cycles with care, confidence, and clean records. Review the week as a whole and prepare the full submission.</p>
-        <div class="mini-list">
-          <div class="mini-item">Finish final 6 cycles</div>
-          <div class="mini-item">Review all 7 days of logs</div>
-          <div class="mini-item">Confirm all Ebos and dominant patterns are documented</div>
-        </div>
-        <div class="outcome">Outcome: Demonstrated discipline, order, and completion.</div>
-      </article>
-
-      <article class="day-card">
-        <div class="day-head">
-          <div class="day-badge">∞</div>
-          <div class="day-title">
-            <h3>Module Insight</h3>
-            <div class="focus">Focus: The deeper lesson</div>
-          </div>
-        </div>
-        <p>This module is not only about mechanics. It trains the Iyawo in patience, submission to process, spiritual observation, and disciplined documentation.</p>
-        <div class="mini-list">
-          <div class="mini-item">Submission to higher order</div>
-          <div class="mini-item">Consistency over impulse</div>
-          <div class="mini-item">Divination as shaping participation</div>
-        </div>
-        <div class="outcome">Outcome: Process becomes practice, and practice becomes character.</div>
-      </article>
+    <section class="process">
+      <h2>20-4 Process Summary</h2>
+      <ol>
+        <li><strong>Cast 20-4 only once.</strong></li>
+        <li>Identify the closest four elements as the <strong>Eldest</strong>.</li>
+        <li>Count the next four as the <strong>Elder</strong> group.</li>
+        <li>Count the next four as the <strong>Senior</strong> group.</li>
+        <li>Count the furthest four as the <strong>Junior</strong> group.</li>
+        <li>Determine the <strong>Eldest Odu</strong> by orientation and direction.</li>
+        <li>Ask whether the Eldership of the Eldest is respected by the next levels.</li>
+        <li>If respected, the matter moves toward <strong>Ire</strong>.</li>
+        <li>If not respected, the matter remains in <strong>Ibi</strong> until transformed.</li>
+      </ol>
     </section>
 
-    <section class="closing-panel">
-      <div class="closing-grid">
-        <div class="closing-box">
-          <h3>Daily Submission Standard</h3>
-          <ul>
-            <li>6 complete cycles each day</li>
-            <li>Record first cast: Odu in Ire or Ibi</li>
-            <li>Record second cast: Ebo / No Ebo / Definitely</li>
-            <li>Record elderized source</li>
-            <li>Document dominant Odu and support</li>
-            <li>Submit work daily in the assigned folder</li>
-          </ul>
-        </div>
-
-        <div class="closing-box">
-          <h3>Final Weekly Deliverable</h3>
-          <ul>
-            <li>7 consecutive days completed</li>
-            <li>42 total practice cycles</li>
-            <li>At least 6 Ebos documented</li>
-            <li>Clean written record of findings</li>
-            <li>Demonstrated understanding of Sources of Ire / Ibi</li>
-          </ul>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <footer class="footer">
-    <p>
-      © 2026 SwamiG Institute • “Extending Royal Legacy” • “Standing on the shoulders of enlightened ancestors”
-    </p>
-    <p>
-      Visit <a href="https://swamiginstitute.com" target="_blank" rel="noopener">SwamiGInstitute.com</a>
-    </p>
+  <footer>
+    SGI • Place this HTML file in the same folder as
+    <strong>EldestCowrie2.png</strong> and <strong>SwamiG.gif</strong>.
   </footer>
 
 </body>
